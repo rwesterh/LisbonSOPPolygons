@@ -6,11 +6,16 @@
     <script type='text/javascript' src='https://www.x3dom.org/x3dom/release/x3dom.js'> </script> 
     <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/x3dom/release/x3dom.css'></link>
     <script type="text/javascript">
-      x3dom.ready = function(element) {
-        const e = document.getElementById('polygons3d')
-        e.runtime.showAll()
-        e.runtime.resetView()
-      }
+      //x3dom.ready = function(element) {
+      //  const e = document.getElementById('polygons3d')
+      //  e.runtime.showAll()
+      //  e.runtime.resetView()
+      //}
+       function fitCamera()
+        {            
+            var x3dElem = document.getElementById('polygons3d');            
+            x3dElem.runtime.fitAll();
+        }
     </script>
   </head>
   <body style="position:fixed;top:0;left:0;bottom:0;right:0;margin:0;">
@@ -18,7 +23,7 @@
       <!--<OrthoViewpoint id="front" bind='false' centerOfRotation='0,0,0' description='front view' fieldOfView='[-1,-1,1,1]' isActive='false' 
         metadata='X3DMetadataObject' orientation='0,0,0,3.14' position='0,0,10' zFar='100' zNear='-10' ></OrthoViewpoint>-->
       <scene> 
-        <inline url="https://rwesterh.github.io/LisbonSOPPolygons/lisbon_sop_polygons.x3d" nameSpaceName="LisbonPolygons" mapDEFToID="true" onclick=''/>
+        <inline url="https://rwesterh.github.io/LisbonSOPPolygons/lisbon_sop_polygons.x3d" onload="fitCamera()" nameSpaceName="LisbonPolygons" mapDEFToID="true" onclick=''/>
       </scene> 
     </x3d>
   </body>
