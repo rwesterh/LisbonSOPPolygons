@@ -7,11 +7,9 @@
     <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/x3dom/release/x3dom.css'></link>
     <script type="text/javascript">
       x3dom.ready = function(element) {
-        if (element == target_element) {
-          const e = document.getElementById('polygons3d')
-          e.runtime.showAll()
-          e.runtime.resetView()
-        }
+        const e = document.getElementById('polygons3d')
+        e.runtime.showAll()
+        e.runtime.resetView()
       }
     </script>
   </head>
